@@ -20,12 +20,26 @@ class FrontPage extends StatelessWidget{
       body: new Stack(
         alignment: Alignment.bottomCenter,
         children: <Widget>[
-          new Container(
-            decoration: new BoxDecoration(
-              image: new DecorationImage(
-                image: new AssetImage("assets/background/7-FrontPage.jpg"), fit: BoxFit.cover,),
+          new DefaultTabController(
+            length: 3,
+            child: Scaffold(
+              appBar: AppBar(
+                bottom: TabBar(
+                  tabs: [
+                    Tab(icon: Icon(Icons.notifications)), // Notifications
+                    Tab(icon: Icon(Icons.favorite)), // Emotional status tab
+                    Tab(icon: Icon(Icons.settings)), // Settings tab
+                  ],
+                ),
+              ),
             ),
           ),
+          // new Container(
+          //   decoration: new BoxDecoration(
+          //     image: new DecorationImage(
+          //       image: new AssetImage("assets/background/7-FrontPage.jpg"), fit: BoxFit.cover,),
+          //   ),
+          // ),
           new Container(
               //margin: const EdgeInsets.only(top: 10.0),
               alignment: Alignment.center,
