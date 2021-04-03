@@ -27,7 +27,7 @@ class StartPage extends StatelessWidget{
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-                image: new AssetImage("assets/background/1-Front.jpg"), fit: BoxFit.cover,),
+                image: new AssetImage("assets/background/landing_screen.png"), fit: BoxFit.cover,),
             ),
           ),
           new Container(
