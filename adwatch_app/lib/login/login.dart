@@ -27,13 +27,74 @@ class LoginPage extends StatelessWidget{
           ),
           new Container(
               alignment: Alignment.center,
+              width: 375,
               child: new Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    SizedBox(height: 90),
-                    new CupertinoButton(
-                      color: Color(0xFF48A7FF),
+                    new Container(
+                      padding: EdgeInsets.symmetric(vertical: 25),
+                      alignment: Alignment.center,
+                      child: TextFormField(
+                        cursorColor: Theme.of(context).cursorColor,
+                        maxLines: 1,
+                        initialValue: "",
+                        decoration: InputDecoration(
+                          icon: Icon(Icons.person),
+                          labelText: 'Username / E-mail',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'Roboto'
+                          ),
+                          // helperText: 'Helper text',
+                          // suffixIcon: Icon(
+                          //   Icons.check_circle,
+                          // ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ),
+                    new Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.symmetric(vertical: 25),
+                      child: TextFormField(
+                        cursorColor: Theme.of(context).cursorColor,
+                        maxLines: 1,
+                        initialValue: "",
+                        decoration: InputDecoration(
+                          icon: Icon(Icons.lock),
+                          labelText: 'Passcode',
+                          labelStyle: TextStyle(
+                              color: Colors.black,
+                              fontFamily: 'Roboto'
+                          ),
+                          // helperText: 'Helper text',
+                          suffixIcon: Icon(
+                            Icons.visibility,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ),
+                  new Container(
+                    alignment: Alignment.centerRight,
+                    margin: EdgeInsets.symmetric(vertical: 25),
+                    child:
+                    OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Colors.black
+                      ),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -41,11 +102,13 @@ class LoginPage extends StatelessWidget{
                         );
                       },
                       child: Text(
-                        'Log In',
+                        'LOG IN',
                         style: TextStyle(
-                            fontFamily: 'Montserrat'),
+                          fontSize: 20,
+                            fontFamily: 'Roboto'),
                       ),
                     ),
+                  ),
                   ]
               )
           )

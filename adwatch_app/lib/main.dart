@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:adwatch_app/app/createNewAccount/new_user.dart';
-import 'package:adwatch_app/app/login/login.dart';
+import 'package:adwatch_app/createNewAccount/new_user.dart';
+import 'package:adwatch_app/app/front_page.dart';
+import 'package:adwatch_app/login/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,37 +32,45 @@ class StartPage extends StatelessWidget{
             ),
           ),
           new Container(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                new CupertinoButton(
-                  color: Color(0xFF48A7FF),
+                // Fingerprint login button
+                OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                      primary: Colors.white,
+                      backgroundColor: Colors.black
+                  ),
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => NewUser()),
+                      MaterialPageRoute(builder: (context) => Front()),
                     );
                   },
                   child: Text(
-                    'Create New Account',
+                    'Continue with Fingerprint',
                     style: TextStyle(
-                      fontFamily: 'Montserrat'),
+                        fontSize: 24,
+                      fontFamily: 'Roboto'
+                    ),
                   ),
                 ),
+                // Local passcode login button
                 new CupertinoButton(
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                        MaterialPageRoute(builder: (context) => Login()),
                     );
                   },
                   child: Text(
-                      'Log In',
+                      'Use Local Passcode Instead',
                       style: TextStyle(
+                        fontSize: 20,
                         color: Color(0xFF000000),
-                        fontFamily: 'Montserrat'),
+                        fontFamily: 'Roboto'),
                   ),
                 ),
               ]

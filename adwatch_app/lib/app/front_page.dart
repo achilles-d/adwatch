@@ -16,7 +16,7 @@ class FrontPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
+      resizeToAvoidBottomInset: false,
       body: new Stack(
         alignment: Alignment.bottomCenter,
         children: <Widget>[
