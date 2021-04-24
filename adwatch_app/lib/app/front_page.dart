@@ -24,14 +24,59 @@ class FrontPage extends StatelessWidget{
             length: 3,
             child: Scaffold(
               appBar: AppBar(
+                title: const Text(
+                    'ADwatch',
+                    style: TextStyle(
+                      color: Colors.black,
+                    )
+                ),
+                backgroundColor: Colors.white,
                 bottom: TabBar(
                   tabs: [
-                    Tab(icon: Icon(Icons.notifications)), // Notifications
-                    Tab(icon: Icon(Icons.favorite)), // Emotional status tab
-                    Tab(icon: Icon(Icons.settings)), // Settings tab
+                    Tab(
+                        icon: Icon(Icons.notifications,
+                        color: Colors.black)
+                    ), // Notifications
+                    Tab(
+                        icon: Icon(Icons.favorite,
+                            color: Colors.black)
+                    ), // Emotional Status
+                    Tab(
+                        icon: Icon(Icons.settings,
+                            color: Colors.black)
+                    ), // Settings
                   ],
                 ),
               ),
+              body: TabBarView(
+                // Automatically bound to the appBar buttons
+                children: <Widget>[
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        image: new DecorationImage(
+                          image: new AssetImage("assets/background/Notifications.png"),
+                        )
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      image: new DecorationImage(
+                       image: new AssetImage("assets/background/Report Page.png"),
+                      )
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        image: new DecorationImage(
+                          image: new AssetImage("assets/background/Settings.png"),
+                        )
+                    ),
+                  ),
+                ]
+              )
             ),
           ),
           // new Container(
@@ -40,53 +85,7 @@ class FrontPage extends StatelessWidget{
           //       image: new AssetImage("assets/background/7-FrontPage.jpg"), fit: BoxFit.cover,),
           //   ),
           // ),
-          new Container(
-              //margin: const EdgeInsets.only(top: 10.0),
-              alignment: Alignment.center,
-              child: new Column(
-                  //crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    new TextFormField(
-                      validator: (val) => val.isEmpty ? 'Enter a business name' : null,
-                      onFieldSubmitted: (val) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Search()),
-                        );
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Search for Businesses',
-                        fillColor: Colors.white,
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white, width: 2.0),
-                          borderRadius: BorderRadius.circular(25.0),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 500),
-                    Container(
-                      child: new TextFormField(
-                        validator: (val) => val.isEmpty ? 'Enter a friend name' : null,
-                        onFieldSubmitted: (val) {
-                          Navigator.push(
-                            context,
-                              MaterialPageRoute(builder: (context) => Search()),
-                          );
-                        },
-                        decoration: InputDecoration(
-                          labelText: 'Search for Friends',
-                          fillColor: Colors.white,
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Color(0xFFC2C8FF), width: 2.0),
-                            borderRadius: BorderRadius.circular(25.0),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-              ),
-          ),
+
         ],
       ),
     );

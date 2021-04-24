@@ -93,6 +93,9 @@ flutter:
     - assets/background/Passcode.png
     - assets/background/settings_icon.png
     - assets/background/Technology.png
+    - assets/background/Settings.png
+    - assets/background/Report Page.png
+    - assets/background/Notifications.png
 
 
   fonts:
