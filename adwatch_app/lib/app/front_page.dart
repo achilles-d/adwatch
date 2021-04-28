@@ -1,6 +1,13 @@
+import 'package:adwatch_app/app/emotional_history.dart';
+import 'package:adwatch_app/app/sounds_and_vibration_settings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adwatch_app/app/search.dart';
+import 'package:adwatch_app/app/privacy_settings.dart';
+import 'package:adwatch_app/app/notifications_settings.dart';
+import 'package:adwatch_app/app/bluetooth_settings.dart';
+import 'package:adwatch_app/app/emotional_history.dart';
+import 'package:adwatch_app/app/explore.dart';
 
 class Front extends StatelessWidget {
   @override
@@ -13,8 +20,6 @@ class Front extends StatelessWidget {
 }
 
 class FrontPage extends StatelessWidget{
-  final List<int> numbers = [1, 2, 3, 5, 8, 13, 21, 34, 55];
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -178,7 +183,7 @@ class FrontPage extends StatelessWidget{
                             Container(
                               child: Icon(
                                 Icons.tag_faces,
-                                size: 100,
+                                size: 75,
                               )
                             ),
                             Container(
@@ -200,7 +205,7 @@ class FrontPage extends StatelessWidget{
                                 Container(
                                   padding: EdgeInsets.symmetric(
                                       horizontal: 7.5,
-                                      vertical: 20
+                                      vertical: 5,
                                   ),
                                   child: Icon(
                                     Icons.access_time,
@@ -214,8 +219,27 @@ class FrontPage extends StatelessWidget{
                                         fontFamily: 'Roboto',
                                       )
                                   )
-                                )
+                                ),
                               ]
+                            ),
+                            OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                primary: Colors.white,
+                                backgroundColor: Colors.black,
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Explore()),
+                                );
+                              },
+                              child: Text(
+                                'EXPLORE',
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontFamily: 'Roboto'
+                                ),
+                              ),
                             ),
                             Container(
                               padding: EdgeInsets.symmetric(
@@ -313,13 +337,13 @@ class FrontPage extends StatelessWidget{
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Front()),
+                                  MaterialPageRoute(builder: (context) => EmotionalHistory()),
                                 );
                               },
                               child: Text(
-                                'View More',
+                                'VIEW FULL HISTORY',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 16,
                                     fontFamily: 'Roboto'
                                 ),
                               ),
@@ -336,9 +360,9 @@ class FrontPage extends StatelessWidget{
                                 );
                               },
                               child: Text(
-                                'Graphs',
+                                'GRAPHS',
                                 style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 16,
                                     fontFamily: 'Roboto'
                                 ),
                               ),
@@ -355,7 +379,7 @@ class FrontPage extends StatelessWidget{
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Front()),
+                                MaterialPageRoute(builder: (context) => NotificationsSettings()),
                               );
                             },
                             leading: Icon(
@@ -375,7 +399,7 @@ class FrontPage extends StatelessWidget{
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Front()),
+                                MaterialPageRoute(builder: (context) => BluetoothSettings()),
                               );
                             },
                             leading: Icon(
@@ -395,7 +419,7 @@ class FrontPage extends StatelessWidget{
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Front()),
+                                MaterialPageRoute(builder: (context) => PrivacySettings()),
                               );
                             },
                             leading: Icon(
@@ -415,7 +439,7 @@ class FrontPage extends StatelessWidget{
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => Front()),
+                                MaterialPageRoute(builder: (context) => SoundsAndVibrationSettings()),
                               );
                             },
                             leading: Icon(

@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:adwatch_app/createNewAccount/new_user.dart';
 import 'package:adwatch_app/app/front_page.dart';
 import 'package:adwatch_app/login/login.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(MyApp());
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
