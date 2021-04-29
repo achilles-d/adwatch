@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adwatch_app/app/front_page.dart';
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Explore extends StatefulWidget {
   @override
@@ -14,6 +16,11 @@ class Explore extends StatefulWidget {
 }
 
 class ExplorePage extends State<Explore>{
+  final String _caretakerGuidesURL = 'https://www.helpguide.org/articles/alzheimers-dementia-aging/tips-for-alzheimers-caregivers.htm';
+  final String _adHotlinesURL = 'https://www.alz.org/help-support/resources/helpline';
+  final String _emotionalSupportInfoURL = 'https://www.alz.org/help-support/i-have-alz/programs-support';
+  final String _covid19HealthInfoURL = 'https://www.alz.org/alzheimers-dementia/coronavirus-covid-19';
+
   BuildContext myBuildContext;
   @override
   Widget build(BuildContext context){
@@ -43,58 +50,78 @@ class ExplorePage extends State<Explore>{
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Card(
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                      width: 175.00,
-                                      height: 200.00,
-                                      decoration: new BoxDecoration(
-                                        image: new DecorationImage(
-                                          image: ExactAssetImage('assets/background/explore1.jpg'),
-                                          fit: BoxFit.fitHeight,
-                                        ),
-                                      )
-                                  ),
-                                  Container(
-                                      child: Text(
-                                          'Caretaker Guides',
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto'
-                                          )
-                                      )
-                                  ),
-                                  Container(
-                                    height: 10.00,
-                                  )
-                                ]
+                          InkWell(
+                            onTap: () {
+                              _launchURL(_caretakerGuidesURL);
+                            },
+                            child: Card(
+                              child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                        width: 175.00,
+                                        height: 200.00,
+                                        decoration: new BoxDecoration(
+                                          image: new DecorationImage(
+                                            image: ExactAssetImage('assets/background/explore1.jpg'),
+                                            fit: BoxFit.fitHeight,
+                                          ),
+                                        )
+                                    ),
+                                    Container(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 5,
+                                        )
+                                    ),
+                                    Container(
+                                        child: Text(
+                                            'Caretaker Guides',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto'
+                                            )
+                                        )
+                                    ),
+                                    Container(
+                                      height: 10.00,
+                                    )
+                                  ]
+                              ),
                             ),
                           ),
-                          Card(
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                      width: 175.00,
-                                      height: 200.00,
-                                      decoration: new BoxDecoration(
-                                        image: new DecorationImage(
-                                          image: ExactAssetImage('assets/background/explore2.jpg'),
-                                          fit: BoxFit.fitHeight,
-                                        ),
-                                      )
-                                  ),
-                                  Container(
-                                      child: Text(
-                                          'AD Hotlines',
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto'
-                                          )
-                                      )
-                                  ),
-                                  Container(
-                                    height: 10.00,
-                                  )
-                                ]
+                          InkWell(
+                            onTap: () {
+                              _launchURL(_adHotlinesURL);
+                              },
+                            child: Card(
+                              child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                        width: 175.00,
+                                        height: 200.00,
+                                        decoration: new BoxDecoration(
+                                          image: new DecorationImage(
+                                            image: ExactAssetImage('assets/background/explore2.jpg'),
+                                            fit: BoxFit.fitHeight,
+                                          ),
+                                        )
+                                    ),
+                                    Container(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 5,
+                                        )
+                                    ),
+                                    Container(
+                                        child: Text(
+                                            'AD Hotlines',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto'
+                                            )
+                                        )
+                                    ),
+                                    Container(
+                                      height: 10.00,
+                                    )
+                                  ]
+                              ),
                             ),
                           ),
                         ],
@@ -103,58 +130,78 @@ class ExplorePage extends State<Explore>{
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Card(
+                          InkWell(
+                            onTap: () {
+                              _launchURL(_emotionalSupportInfoURL);
+                              },
+                            child: Card(
                               child: Column(
-                                children: <Widget>[
-                                  Container(
-                                      width: 175.00,
-                                      height: 200.00,
-                                      decoration: new BoxDecoration(
-                                        image: new DecorationImage(
-                                          image: ExactAssetImage('assets/background/explore3.jpg'),
-                                          fit: BoxFit.fitHeight,
-                                        ),
-                                      )
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      'Emotional Support Info',
-                                      style: TextStyle(
-                                        fontFamily: 'Roboto'
-                                      )
+                                  children: <Widget>[
+                                    Container(
+                                        width: 175.00,
+                                        height: 200.00,
+                                        decoration: new BoxDecoration(
+                                          image: new DecorationImage(
+                                            image: ExactAssetImage('assets/background/explore3.jpg'),
+                                            fit: BoxFit.fitHeight,
+                                          ),
+                                        )
+                                    ),
+                                    Container(
+                                        padding: EdgeInsets.symmetric(
+                                          vertical: 5,
+                                        )
+                                    ),
+                                    Container(
+                                        child: Text(
+                                            'Emotional Support Info',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto'
+                                            )
+                                        )
+                                    ),
+                                    Container(
+                                      height: 10.00,
                                     )
-                                  ),
-                                  Container(
-                                    height: 10.00,
-                                  )
-                                ]
+                                  ]
                               ),
+                            ),
                           ),
-                          Card(
-                            child: Column(
-                                children: <Widget>[
-                                  Container(
-                                      width: 175.00,
-                                      height: 200.00,
-                                      decoration: new BoxDecoration(
-                                        image: new DecorationImage(
-                                          image: ExactAssetImage('assets/background/explore4.jpg'),
-                                          fit: BoxFit.fitHeight,
-                                        ),
+                          InkWell(
+                            onTap: () {
+                              _launchURL(_covid19HealthInfoURL);
+                            },
+                            child: Card(
+                              child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                        width: 175.00,
+                                        height: 200.00,
+                                        decoration: new BoxDecoration(
+                                          image: new DecorationImage(
+                                            image: ExactAssetImage('assets/background/explore4.jpg'),
+                                            fit: BoxFit.fitHeight,
+                                          ),
+                                        )
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        vertical: 5,
                                       )
-                                  ),
-                                  Container(
-                                      child: Text(
-                                          'COVID-19 Health Info',
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto'
-                                          )
-                                      )
-                                  ),
-                                  Container(
-                                    height: 10.00,
-                                  )
-                                ]
+                                    ),
+                                    Container(
+                                        child: Text(
+                                            'COVID-19 Health Info',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto'
+                                            )
+                                        )
+                                    ),
+                                    Container(
+                                      height: 10.00,
+                                    )
+                                  ]
+                              ),
                             ),
                           ),
                         ],
@@ -196,70 +243,10 @@ class ExplorePage extends State<Explore>{
     );
   }
 
-  Future<void> _displayConnectConfimDialog(String name, bool isConnecting) async {
-    String messagePrefix;
-    if(isConnecting)
-      messagePrefix = 'Are you sure that you want to connect to ';
+  _launchURL(String url) async {
+    if (await canLaunch(url))
+      await launch(url);
     else
-      messagePrefix = 'Are you sure that you want to disconnect ';
-
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(
-              'Confirm Connection',
-              style: TextStyle(
-                fontFamily: 'Roboto',
-              )
-          ),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text(
-                    messagePrefix + name + "\'s" + " watch?",
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                    )
-                ),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                primary: Colors.black,
-                backgroundColor: Colors.white,
-              ),
-              child: Text(
-                  'YES',
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                  )
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            OutlinedButton(
-              style: OutlinedButton.styleFrom(
-                primary: Colors.black,
-                backgroundColor: Colors.white,
-              ),
-              child: Text(
-                  'NO',
-                  style: TextStyle(
-                    fontFamily: 'Roboto',
-                  )
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
+      return;
   }
 }
