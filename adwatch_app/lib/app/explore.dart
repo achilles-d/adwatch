@@ -51,14 +51,14 @@ class ExplorePage extends State<Explore>{
                                       height: 200.00,
                                       decoration: new BoxDecoration(
                                         image: new DecorationImage(
-                                          image: ExactAssetImage('assets/example.png'),
+                                          image: ExactAssetImage('assets/background/explore1.jpg'),
                                           fit: BoxFit.fitHeight,
                                         ),
                                       )
                                   ),
                                   Container(
                                       child: Text(
-                                          'Caption',
+                                          'Caretaker Guides',
                                           style: TextStyle(
                                               fontFamily: 'Roboto'
                                           )
@@ -78,14 +78,14 @@ class ExplorePage extends State<Explore>{
                                       height: 200.00,
                                       decoration: new BoxDecoration(
                                         image: new DecorationImage(
-                                          image: ExactAssetImage('assets/example.png'),
+                                          image: ExactAssetImage('assets/background/explore2.jpg'),
                                           fit: BoxFit.fitHeight,
                                         ),
                                       )
                                   ),
                                   Container(
                                       child: Text(
-                                          'Caption',
+                                          'AD Hotlines',
                                           style: TextStyle(
                                               fontFamily: 'Roboto'
                                           )
@@ -111,14 +111,14 @@ class ExplorePage extends State<Explore>{
                                       height: 200.00,
                                       decoration: new BoxDecoration(
                                         image: new DecorationImage(
-                                          image: ExactAssetImage('assets/example.png'),
+                                          image: ExactAssetImage('assets/background/explore3.jpg'),
                                           fit: BoxFit.fitHeight,
                                         ),
                                       )
                                   ),
                                   Container(
                                     child: Text(
-                                      'Caption',
+                                      'Emotional Support Info',
                                       style: TextStyle(
                                         fontFamily: 'Roboto'
                                       )
@@ -138,14 +138,14 @@ class ExplorePage extends State<Explore>{
                                       height: 200.00,
                                       decoration: new BoxDecoration(
                                         image: new DecorationImage(
-                                          image: ExactAssetImage('assets/example.png'),
+                                          image: ExactAssetImage('assets/background/explore4.jpg'),
                                           fit: BoxFit.fitHeight,
                                         ),
                                       )
                                   ),
                                   Container(
                                       child: Text(
-                                          'Caption',
+                                          'COVID-19 Health Info',
                                           style: TextStyle(
                                               fontFamily: 'Roboto'
                                           )

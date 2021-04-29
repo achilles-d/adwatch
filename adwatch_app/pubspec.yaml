@@ -98,6 +98,10 @@ flutter:
     - assets/background/Settings.png
     - assets/background/Report Page.png
     - assets/background/Notifications.png
+    - assets/background/explore1.jpg
+    - assets/background/explore2.jpg
+    - assets/background/explore3.jpg
+    - assets/background/explore4.jpg
 
 
   fonts:
