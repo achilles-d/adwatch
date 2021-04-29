@@ -71,7 +71,7 @@ class FrontPage extends StatelessWidget{
                                     )
                                 ),
                                 title: Text(
-                                    'Ask John if he would like to play poker',
+                                    'Ask John if he would like to listen to music',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                     )
