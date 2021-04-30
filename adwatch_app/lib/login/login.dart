@@ -63,6 +63,7 @@ class LoginPage extends StatelessWidget{
                       alignment: Alignment.center,
                       margin: EdgeInsets.symmetric(vertical: 25),
                       child: TextFormField(
+                        obscureText: true,
                         cursorColor: Theme.of(context).cursorColor,
                         maxLines: 1,
                         initialValue: "",
