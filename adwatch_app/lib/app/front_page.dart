@@ -9,17 +9,38 @@ import 'package:adwatch_app/app/bluetooth_settings.dart';
 import 'package:adwatch_app/app/emotional_history.dart';
 import 'package:adwatch_app/app/explore.dart';
 
-class Front extends StatelessWidget {
+class Front extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'Montserrat'),
-      home: FrontPage(),
-    );
-  }
+  State createState() => FrontPage();
 }
 
-class FrontPage extends StatelessWidget{
+class FrontPage extends State<Front>{
+  final String _notificationsTitle = 'Notifications';
+  final String _emotionalStatusTitle = 'Emotional Status';
+  final String _settingsTitle = 'Settings';
+  String _frontPageTitle = "Notifications";
+  int _tabBarIndex = 0;
+
+  void changeTitle(int index){
+    setState(() {
+      switch(index) {
+        case(0):
+          _frontPageTitle = _notificationsTitle;
+          break;
+        case(1):
+          _frontPageTitle = _emotionalStatusTitle;
+          break;
+        case(2):
+          _frontPageTitle = _settingsTitle;
+          break;
+        default:
+          _frontPageTitle = _notificationsTitle;
+          break;
+      }
+    });
+    print(_frontPageTitle);
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -31,8 +52,8 @@ class FrontPage extends StatelessWidget{
             length: 3,
             child: Scaffold(
               appBar: AppBar(
-                title: const Text(
-                    'ADwatch',
+                title: Text(
+                    _frontPageTitle,
                     style: TextStyle(
                       fontFamily: 'Roboto',
                       color: Colors.black,
@@ -40,6 +61,7 @@ class FrontPage extends StatelessWidget{
                 ),
                 backgroundColor: Colors.white,
                 bottom: TabBar(
+                  onTap: changeTitle,
                   tabs: [
                     Tab(
                         icon: Icon(Icons.notifications,
@@ -57,6 +79,8 @@ class FrontPage extends StatelessWidget{
                 ),
               ),
               body: TabBarView(
+                // Disable scrolling
+                  physics: NeverScrollableScrollPhysics(),
                 // Automatically bound to the appBar buttons
                 children: <Widget>[
                   Container(
