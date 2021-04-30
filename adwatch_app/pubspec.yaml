@@ -103,6 +103,8 @@ flutter:
     - assets/background/explore2.jpg
     - assets/background/explore3.jpg
     - assets/background/explore4.jpg
+    - assets/misc/emotion_graph.png
+    - assets/misc/EDA.png
 
 
   fonts:

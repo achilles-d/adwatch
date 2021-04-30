@@ -1,7 +1,8 @@
+import 'package:adwatch_app/app/connect_credential_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:adwatch_app/app/front_page.dart';
-import 'package:adwatch_app/app/bluetooth_connecting.dart';
+import 'package:adwatch_app/app/bluetooth_connected.dart';
 
 class BluetoothSettings extends StatefulWidget {
   @override
@@ -297,10 +298,15 @@ class BluetoothSettingsPage extends State<BluetoothSettings>{
 
   Future<void> _displayConnectConfirmDialog(String name, bool isConnecting) async {
       String messagePrefix;
-      if(isConnecting)
+      String titleSuffix;
+      if(isConnecting) {
         messagePrefix = 'Are you sure that you want to connect to ';
-      else
+        titleSuffix = 'Connection';
+      }
+      else {
         messagePrefix = 'Are you sure that you want to disconnect ';
+        titleSuffix = 'Disconnect';
+      }
 
       return showDialog<void>(
         context: context,
@@ -308,7 +314,7 @@ class BluetoothSettingsPage extends State<BluetoothSettings>{
         builder: (BuildContext context) {
           return AlertDialog(
             title: Text(
-                'Confirm Connection',
+                'Confirm ' + titleSuffix,
                 style: TextStyle(
                   fontFamily: 'Roboto',
                 )
@@ -341,7 +347,7 @@ class BluetoothSettingsPage extends State<BluetoothSettings>{
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => BluetoothConnecting()),
+                        builder: (context) => ConnectCredentialForm()),
                   );
                 }
               ),

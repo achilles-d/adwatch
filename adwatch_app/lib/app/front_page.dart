@@ -8,6 +8,7 @@ import 'package:adwatch_app/app/notifications_settings.dart';
 import 'package:adwatch_app/app/bluetooth_settings.dart';
 import 'package:adwatch_app/app/emotional_history.dart';
 import 'package:adwatch_app/app/explore.dart';
+import 'package:adwatch_app/app/emotional_data.dart';
 
 class Front extends StatefulWidget {
   @override
@@ -380,11 +381,11 @@ class FrontPage extends State<Front>{
                               onPressed: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Front()),
+                                  MaterialPageRoute(builder: (context) => EmotionalData()),
                                 );
                               },
                               child: Text(
-                                'GRAPHS',
+                                'VIEW ALL EMOTIONAL DATA',
                                 style: TextStyle(
                                     fontSize: 16,
                                     fontFamily: 'Roboto'
